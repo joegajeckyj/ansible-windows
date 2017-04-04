@@ -1,8 +1,8 @@
 [all]
-10.2.0.42
+10.105.13.20
 
 [all:vars]
-ansible_ssh_user=the_username
-ansible_ssh_pass=the_password
+ansible_ssh_user=Administrator
+ansible_ssh_pass=dbghYp9e3bR
 ansible_ssh_port=5985
 ansible_connection=winrm
