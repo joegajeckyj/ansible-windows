@@ -1,5 +1,5 @@
 [windows]
-10.105.13.20
+GB3GOCHJRGAPP02 10.105.13.20
 
 [windows:vars]
 ansible_ssh_user="{{user}}"
