@@ -1,5 +1,5 @@
 - name: test raw module
-  hosts: all
+  hosts: "{{server_name}}"
   tasks:
     - name: run ipconfig
       raw: ipconfig
