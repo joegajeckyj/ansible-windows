@@ -1,8 +1,8 @@
 ---
-- name: test raw module
+- name: Run Powershell Playbook
   hosts: localhost
   tasks:
-    - name: run a powershell script
+    - name: Run a Powershell Script
       script: winrm_mem.py
        -s "{{server_name}}"
        -u "{{user}}"
