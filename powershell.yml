@@ -1,7 +1,11 @@
+---
 - name: test raw module
   hosts: localhost
   tasks:
     - name: run a powershell script
       script: winrm_mem.py
+       "{{server_name}}"
+       "{{user}}"
+       "{{password}}"
       register: out
     - debug: var=out
