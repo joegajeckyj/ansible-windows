@@ -8,9 +8,9 @@ parser = ArgumentParser()
 # Add more options if you like
 parser.add_argument("-s", "--server", dest="server",
                     help="Enter server name", metavar="SERVER")
-parser.add_argument("-s", "--server", dest="user",
+parser.add_argument("-u", "--user", dest="user",
                     help="Enter user name", metavar="USER")
-parser.add_argument("-s", "--server", dest="password",
+parser.add_argument("-p", "--password", dest="password",
                     help="Enter password", metavar="PASSWORD")
 args = parser.parse_args()
 
