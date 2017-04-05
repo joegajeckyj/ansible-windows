@@ -1,10 +1,26 @@
 #!/usr/bin/env python
-
 import winrm
 
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+
+# Add more options if you like
+parser.add_argument("-s", "--server", dest="server",
+                    help="Enter server name", metavar="SERVER")
+parser.add_argument("-s", "--server", dest="user",
+                    help="Enter user name", metavar="USER")
+parser.add_argument("-s", "--server", dest="password",
+                    help="Enter password", metavar="PASSWORD")
+args = parser.parse_args()
+
+print(args.server)
+print(args.user)
+print(args.password)
+
 ps_script = open('scripts/mem.ps1','r').read()
-s = winrm.Session("{{server_name}}", auth=("{{user}}", "{{password}}"))
-r = s.run_ps(ps_script)
-print r.status_code
-print r.std_out
-print r.std_err
+session = winrm.Session("{{server_name}}", auth=("{{user}}", "{{password}}"))
+run = session.run_ps(ps_script)
+print run.status_code
+print run.std_out
+print run.std_err
