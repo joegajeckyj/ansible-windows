@@ -4,8 +4,8 @@
   tasks:
     - name: run a powershell script
       script: winrm_mem.py
-       "{{server_name}}"
-       "{{user}}"
-       "{{password}}"
+       -s "{{server_name}}"
+       -u "{{user}}"
+       -p "{{password}}"
       register: out
     - debug: var=out
