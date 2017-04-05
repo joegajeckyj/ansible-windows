@@ -6,4 +6,3 @@
     - name: Run a Powershell Script
       script: scripts/mem.ps1
       register: out
-- debug: var=out
