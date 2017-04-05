@@ -1,5 +1,5 @@
 - name: test raw module
-  hosts: "{{server_name}}"
+  hosts: localhost
   tasks:
     - name: run a powershell script
       script: winrm_mem.py
