@@ -19,7 +19,7 @@ print args.user
 print args.password
 
 ps_script = open('scripts/mem.ps1','r').read()
-session = winrm.Session('10.105.13.20', auth=(args.user, args.password))
+session = winrm.Session(''args.server'', auth=(''args.user'', ''args.password''))
 run = session.run_ps(ps_script)
 print run.status_code
 print run.std_out
