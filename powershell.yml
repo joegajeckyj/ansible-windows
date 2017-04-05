@@ -1,0 +1,12 @@
+
+---
+- name: Run Powershell Playbook
+  hosts: localhost
+  tasks:
+    - name: Run a Powershell Script
+      script: winrm_mem.py
+       -s "{{server_name}}"
+       -u "{{user}}"
+       -p "{{password}}"
+      register: out
+- debug: var=out
