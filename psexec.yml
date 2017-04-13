@@ -1,0 +1,9 @@
+---
+- win_psexec:
+    command: ipconfig /all
+    hostnames:
+    - "{{server_name}}"
+    username: "{{username}}"
+    password: "{{password}}"
+    priority: high
+    
