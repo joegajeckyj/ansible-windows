@@ -6,4 +6,5 @@
     username: "{{username}}"
     password: "{{password}}"
     priority: high
-    
+    register: ipconfig
+- debug: var=ipconfig
