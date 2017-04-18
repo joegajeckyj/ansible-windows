@@ -2,7 +2,6 @@
 ---
 - name: Run Powershell Playbook
   hosts: "{{server_name}}"
-  remote_user: "{{user_name}}"
   tasks:
     - name: Run a Powershell Script
       script: scripts/mem.ps1
