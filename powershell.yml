@@ -1,6 +1,6 @@
-
 ---
-- ansible_winrm_transport=kerberos
+- ansible_winrm_transport: kerberos
+- ansible_winrm_kerberos_delegation: yes
 - name: Run Powershell Playbook
   hosts: "{{server_name}}"
   tasks:
