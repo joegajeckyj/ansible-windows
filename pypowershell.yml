@@ -5,7 +5,7 @@
     - name: Run a Powershell Script
       script: winrm_ipconfig.py
        -s "{{server_name}}"
-       -u "{{user}}"
+       -u "{{username}}"
        -p "{{password}}"
       register: out
     - debug: var=out
