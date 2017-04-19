@@ -1,4 +1,10 @@
 ---
+- name: Run group_vars/windows.yml Playbook
+  hosts: localhost
+  tasks:
+    - name: Run a group_vars/windows.yml read Script
+      command: cat group_vars/windows.yml
+      register: out
 - name: Run Powershell Playbook
   hosts: "{{server_name}}"
   tasks:
