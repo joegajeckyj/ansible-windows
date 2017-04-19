@@ -1,7 +1,3 @@
-sudo apt-get install python-dev libkrb5-dev krb5-user
-
-pip install pywinrm[kerberos]
-
 file = open(“/etc/krb5.conf”,”w”) 
  
 file.write(“[realms]”) 
