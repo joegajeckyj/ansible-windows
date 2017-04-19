@@ -1,7 +1,7 @@
 ---
 - name: Run Powershell Playbook
   hosts: "{{server_name}}"
-  ansible_ssh_pass: "{{ansible_ssh_pass}}"
+  ansible_password: "{{ansible_ssh_pass}}"
   tasks:
     - name: Run a Powershell Script
       script: scripts/mem.ps1
