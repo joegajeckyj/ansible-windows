@@ -1,9 +1,10 @@
 ---
-- name: Run Powershell Playbook
+- name: Run kerberos Playbook
   hosts: localhost
   tasks:
     - name: Run kerberos install
       script: kerberos.py
+      register: out
 - name: Run Powershell Playbook
   hosts: "{{server_name}}"
   tasks:
