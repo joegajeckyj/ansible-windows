@@ -1,0 +1,9 @@
+[windows]
+GB3GOCHJRGTST01.JRG.LAB
+
+[windows:vars]
+ansible_user = runner_admin
+ansible_password = dbghYp9e3bR
+ansible_port = 5986
+ansible_connection = winrm
+ansible_winrm_server_cert_validation = ignore
