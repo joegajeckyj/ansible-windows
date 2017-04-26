@@ -3,6 +3,6 @@
   hosts: "{{server_name}}"
   tasks:
     - name: Run a Powershell Script
-      script: scripts/mem.ps1
+      script: scripts/"{{script_name}}"
       register: out
     - debug: var=out
