@@ -1,6 +1,6 @@
 ---
 - name: Start a script on host
-  hosts: testservers
+  hosts: "{{server_name}}"
   gather_facts: False
   vars:
     ansible_password: dbghYp9e3bR
