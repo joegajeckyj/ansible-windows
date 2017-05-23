@@ -1,0 +1,8 @@
+---
+- name: Run kerberos Playbook
+  hosts: localhost
+  tasks:
+    - name: Run a kerberos setup
+      script: scripts/kerberos.sh
+      register: out
+    - debug: var=out
