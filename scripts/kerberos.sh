@@ -10,13 +10,9 @@ grep -q "$adDomainUC" /etc/krb5.conf
 krbstatus=$?
 #update kerberos file if not previously updated with this domain
 if [ $krbstatus -ne 0 ]; then
-   cp -fp /etc/krb5.conf /etc/krb5.conf.$datestamp
-   cp -fp /etc/krb5.conf /etc/krb5.conf.new
-   sed -i "/^ default_realm/c\\ default_realm = $adDomainUC" /etc/krb5.conf.new
-   sed -i '/\[realms\]/,/\[domain_realm\]/{//!d}' /etc/krb5.conf.new
-   sed -i '/example.com/d' /etc/krb5.conf.new
-   sed -i "/\[realms\]/a\ $adDomainUC = \{\n   kdc = ${dcFQDN1^^}\n   kdc = ${dcFQDN2^^}\n   admin_server = ${dcFQDN1^^}\n \}\n" /etc/krb5.conf.new
-   sed -i "/\[domain_realm\]/a\ .$adDomainLC = $adDomainUC\n $adDomainLC = $adDomainUC\n" /etc/krb5.conf.new
-   \cp -fp /etc/krb5.conf.new /etc/krb5.conf
-   rm -f /etc/krb5.conf.new
+   sed -i "/^ default_realm/c\\ default_realm = $adDomainUC" /etc/krb5.conf
+   sed -i '/\[realms\]/,/\[domain_realm\]/{//!d}' /etc/krb5.conf
+   sed -i '/example.com/d' /etc/krb5.conf
+   sed -i "/\[realms\]/a\ $adDomainUC = \{\n   kdc = ${dcFQDN1^^}\n   kdc = ${dcFQDN2^^}\n   admin_server = ${dcFQDN1^^}\n \}\n" /etc/krb5.conf
+   sed -i "/\[domain_realm\]/a\ .$adDomainLC = $adDomainUC\n $adDomainLC = $adDomainUC\n" /etc/krb5.conf
 fi
