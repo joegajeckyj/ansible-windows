@@ -16,3 +16,5 @@ if [ $krbstatus -ne 0 ]; then
    sed -i "/\[realms\]/a\ $adDomainUC = \{\n   kdc = ${dcFQDN1^^}\n   kdc = ${dcFQDN2^^}\n   admin_server = ${dcFQDN1^^}\n \}\n" /etc/krb5.conf
    sed -i "/\[domain_realm\]/a\ .$adDomainLC = $adDomainUC\n $adDomainLC = $adDomainUC\n" /etc/krb5.conf
 fi
+
+cat /etc/krb5.conf
