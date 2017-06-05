@@ -1,6 +1,6 @@
 ---
 - name: Run Powershell Playbook
-  hosts: localhost
+  hosts: "{{server_name}}"
   tasks:
     - name: Run a Powershell Script
       script: "{{script_name}}"
