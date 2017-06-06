@@ -3,11 +3,8 @@
   hosts: "{{server_name}}"
   gather_facts: False
   vars:
-    ansible_password: dbghYp9e3bR
-    ansible_user: runner_admin
-    ansible_port: 5986
     ansible_connection: winrm
-    ansible_winrm_transport: plaintext
+    ansible_winrm_transport: html
   tasks:
     - name: Run a Powershell Script
       script: scripts/mem.ps1
