@@ -4,5 +4,3 @@
   tasks:
     - name: Run Powershell Script "{{script_name}}"
       script: "{{script_name}}"
-      register: out
-    - debug: var=out
