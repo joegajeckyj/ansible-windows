@@ -7,5 +7,5 @@
     ansible_winrm_transport: ntlm
   tasks:
     - name: Run a Powershell Script
-      script: scripts/mem.ps1
+      script: "{{script_name}}"
       register: out
