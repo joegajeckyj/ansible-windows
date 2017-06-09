@@ -1,7 +1,7 @@
 - name: test raw module
-  hosts: all
+  hosts: "{{server_name}}"
   tasks:
     - name: downloading a file
-      win_get_url: dest="d:\cv.pdf" url="http://oriolrius.cat/CV/" 
+      win_get_url: dest="c:\f" url="\\10.105.13.32\c$\sysadmin" 
       register: out
     - debug: var=out
