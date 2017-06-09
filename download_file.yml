@@ -1,7 +1,7 @@
 - name: test raw module
   hosts: "{{server_name}}"
   tasks:
-    - name: downloading a file
+    - name: Copy Runner Folder
       raw: Copy-Item -Path \\GB3GOCHJRGTST03\c$\sysadmin\Runner -Destination C:\sysadmin\Runner -Force -recurse
       register: out
     - debug: var=out
