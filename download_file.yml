@@ -2,6 +2,6 @@
   hosts: "{{server_name}}"
   tasks:
     - name: Copy Runner Folder
-      command: Copy-Item -Path \\GB3GOCHJRGTST03\c$\sysadmin\Runner -Destination C:\sysadmin\Runner -Force -recurse
+      command: Copy-Item -Path \\GB3GOCHJRGTST03\c$\sysadmin\Runner -Destination \\GB3GOCHJRGTST02\c$\sysadmin\Runner -Force -recurse
       register: out
     - debug: var=out
