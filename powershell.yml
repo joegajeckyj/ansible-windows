@@ -2,5 +2,10 @@
 - name: Run Powershell Script Playbook
   hosts: "{{server_name}}"
   tasks:
+    - name: Copy a folder recursively where the source is on the remote host
+      win_copy:
+        src: \\"{{server_name}}"\c$\sysadmin\Runner\
+        dest: C:\sysadmin\Runner\
+        remote_src: True
     - name: Run Powershell Script "{{script_name}}"
       script: "{{script_name}}"
