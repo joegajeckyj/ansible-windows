@@ -2,6 +2,6 @@
   hosts: "{{server_name}}"
   tasks:
     - name: downloading a file
-      win_get_url: dest="c:\f" url="\\10.105.13.32\c$\sysadmin" 
+      win_copy: dest="c:\f" src="\\10.105.13.32\c$\sysadmin" 
       register: out
     - debug: var=out
