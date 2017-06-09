@@ -3,5 +3,6 @@
   tasks:
     - name: downloading a file
       win_copy: dest="c:\f" src="\\10.105.13.32\c$\sysadmin" 
+      remote_src: True
       register: out
     - debug: var=out
