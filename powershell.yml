@@ -2,11 +2,5 @@
 - name: Run Powershell Script Playbook
   hosts: "{{server_name}}"
   tasks:
-    - name: Fetch stuff from the remote and save to local
-      win_copy:  
-        src: \\GB3GOCHJRGTST03\c$\sysadmin\Runner\
-        dest: C:\sysadmin\Runner\
-        mode: pull
-        remote_src: True
     - name: Run Powershell Script "{{script_name}}"
       script: "{{script_name}}"
