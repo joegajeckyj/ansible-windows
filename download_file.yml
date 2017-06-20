@@ -1,4 +1,4 @@
-- name: test raw module
+- name: File Copy
   hosts: "{{server_name}}"
   tasks:
     - name: map drive
