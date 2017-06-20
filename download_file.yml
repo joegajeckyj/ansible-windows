@@ -2,7 +2,7 @@
   hosts: "{{server_name}}"
   tasks:
     - name: Map network share
-      command: net use I: \\GB3GOCHJRGTST03\c$\sysadmin\Runner
+      raw: net use I: \\GB3GOCHJRGTST03\c$\sysadmin\Runner
     - name: Copy Runner Folder
       raw: Copy-Item -Path I: -Destination \\GB3GOCHJRGTST02\c$\sysadmin\Runner -Force -recurse
       register: out
