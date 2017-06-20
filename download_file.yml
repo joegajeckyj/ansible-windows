@@ -5,5 +5,7 @@
       raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
     - name: Copy Runner Folder
       raw: 'Copy-Item -Path i:\Runner -Destination c:\sysadmin\Runner -Force -recurse'
+    - name: Copy Runner Folder
+      raw: 'dir i:'
       register: out
     - debug: var=out
