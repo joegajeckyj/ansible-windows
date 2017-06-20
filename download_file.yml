@@ -2,7 +2,7 @@
   hosts: "{{server_name}}"
   tasks:
     - name: map drive
-      win_command: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
+      raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
     - name: Copy Runner Folder
       raw: 'Copy-Item -Path i: -Destination \\GB3GOCHJRGTST02\c$\sysadmin\Runner -Force -recurse'
       register: out
