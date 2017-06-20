@@ -1,8 +1,8 @@
 - name: test raw module
   hosts: "{{server_name}}"
   tasks:
-    - name: Map network share
-      raw: net use I: \\GB3GOCHJRGTST03\c$\sysadmin\Runner
+    - name: map drive
+      win_command: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
     - name: Copy Runner Folder
       raw: Copy-Item -Path I: -Destination \\GB3GOCHJRGTST02\c$\sysadmin\Runner -Force -recurse
       register: out
