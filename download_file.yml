@@ -2,9 +2,9 @@
   hosts: "{{server_name}}"
   tasks:
     - name: map drive
-      raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
+      raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}" /PERSISTENT:YES'
     - name: Copy Runner Folder
-      raw: 'Copy-Item -Path i:\* -Destination c:\sysadmin\Runner -Force -recurse'
+      raw: 'Copy-Item -Path i:\ -Destination c:\sysadmin\Runner -Force -recurse'
     - name: List DIR
       raw: 'dir i:'
       register: out
