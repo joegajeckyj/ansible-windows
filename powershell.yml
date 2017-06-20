@@ -2,9 +2,7 @@
 - name: Run Powershell Script Playbook
   hosts: "{{server_name}}"
   tasks:
-    - name: Map Drive
-      raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}"'
-    - name: Copy Runner Folder
-      raw: 'Copy-Item -Path i:\Runner -Destination c:\sysadmin\Runner -Force -recurse'
+    - name: map drive
+      raw: 'net use i: \\GB3GOCHJRGTST03\c$\sysadmin\Runner "{{ansible_ssh_pass}}" /user:"{{ansible_ssh_user}}" /PERSISTENT:YES'
     - name: Run Powershell Script "{{script_name}}"
       script: "{{script_name}}"
